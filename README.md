@@ -23,7 +23,7 @@ The study jointly constructed six predictive models, establishing models for pre
 2.The 9D_DF folder contains the 1_Feature_extraction folder and the 2_BP_prediction folder.
 (1)1_Feature_extraction folder:
 1_Calculate_Gaussian_optimal_parameters.py：
-The optimal parameters of the unconstrained Gaussian model were calculated and saved in “1.Gaussian_optimal_parameters.xlsx”, and all generated Gaussian fitting visualization results were stored in the “Gaussian_Fitting_Plot” folder.计算了无约束高斯模型的最优参数，将其保存于 
+The optimal parameters of the unconstrained Gaussian model were calculated and saved in “1.Gaussian_optimal_parameters.xlsx”, and all generated Gaussian fitting visualization results were stored in the “Gaussian_Fitting_Plot” folder.
 2_Calculate_Gaussian_features.py: 
 Calculate the corresponding Gaussian features based on the obtained optimal Gaussian parameters and save the results to the “2_Gaussian_features.xlsx”.
 3_Write_blood_pressure.py: 
@@ -56,7 +56,6 @@ Merge the blood pressure data in '8D_KF.xlsx' with the Gaussian feature file. Th
 Each interval's corresponding folder follows the same modeling process.
 
 This study selected six predictive models to effectively predict blood pressure based on Gaussian features generated from 35 data interval constraints derived from knowledge characteristics.
-本研究选用六种预测模型，以从知识特征中推导出的35个数据区间约束所生成的高斯特征为基础，实现血压的有效预测。
 
 baseline
 1.Add_baseline_features.py: 
@@ -64,8 +63,7 @@ The Gaussian features (DKF) constrained by a 95% data interval based on knowledg
 2.Handling_of_sex.py: 
 Convert gender characteristics into binary code, with males encoded as 1 and females encoded as 0.
 3.DNN.py: 
-Refining blood pressure prediction using a DNN model with DKF that includes baseline features.对加入基线特征的DKF用DNN模型进行血压预测
+Refining blood pressure prediction using a DNN model with DKF that includes baseline features.
 PPGs+BIFs:
 Under the DNN framework, two types of blood pressure predictions are calculated for each sample: one based solely on DKF features, and the other combining DKF features with baseline features.
-在DNN框架下，分别计算各样本的两种血压预测值：一种仅基于DKF特征，另一种则结合了DKF特征与基线特征。
 
