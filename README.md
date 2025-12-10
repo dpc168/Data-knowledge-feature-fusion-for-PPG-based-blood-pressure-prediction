@@ -1,3 +1,5 @@
+Dataset: dataset folder.
+
 Downloaded package: matplotlib；scipy；openpyxl；pandas；numpy；scikit-learn；tqdm；torch；xgboost.
 
 Preprocessing folder
@@ -13,13 +15,10 @@ Feature Extraction and Blood Pressure Prediction
 (1)1_Feature_extraction folder:
 01_Calculate_Knowledge_features.py: 
 By plotting and analyzing the PPG signal and its fourth-order derivative, we interactively selected eight key knowledge feature points in different dimensions and performed a secondary screening of the signals based on waveform morphology. The extracted eight-dimensional knowledge feature data is saved in “01_result.xlsx”, while the final valid signals, after initial screening and waveform feature re-screening, are stored in the “raw_PP.xlsx”.
-
 02_Write_blood_pressured_cycle_position.py:
 Merge the blood pressure information (such as systolic and diastolic pressure) from the “raw_PPG.xlsx” file into the knowledge feature file, ultimately generating a comprehensive data file named “8D_KF.xlsx”. This file contains both the eight-dimensional knowledge features and their corresponding blood pressure information.
-
 (2)2_BP_prediction folder: 
 The study jointly constructed six predictive models, establishing models for predicting systolic and diastolic blood pressure based on the integrated 8-dimensional knowledge features.
-
 2.The 9D_DF folder contains the 1_Feature_extraction folder and the 2_BP_prediction folder.
 (1)1_Feature_extraction folder:
 1_Calculate_Gaussian_optimal_parameters.py：
@@ -42,7 +41,7 @@ Calculate the corresponding Gaussian features based on the obtained optimal Gaus
 Merge the blood pressure data from "8D_KF.xlsx" with the Gaussian feature file, and save the integrated data to "4_Gaussian_features_BP.xlsx." This file combines the 8-dimensional knowledge features with the 9-dimensional data features, and also includes blood pressure information. Its content is exactly the same as "8D_KF 9D_DF.xlsx."
 (2)2_BP_prediction folder:
 This study constructed a total of six predictive models. The models are based on a 17-dimensional feature set, which integrates 8-dimensional knowledge features and 9-dimensional data features, and are used to predict systolic and diastolic blood pressure, respectively.
-4.The 9D_DKF directory contains 36 data interval folders, each of which has three subfolders: 1_Feature_extraction, 2_BP_prediction, and gaussian_fitting_plots.
+4.The 9D_DKF directory contains 36 data interval folders, each of which has three subfolders: 1_Feature_extraction,  and gaussian_fitting_plots.
 Take the 2% folder as an example.
 (1)1_Feature_extraction folder:
 1_Gaussian_data_intervals.py: 
@@ -55,6 +54,7 @@ Calculate the corresponding Gaussian features based on the obtained optimal Gaus
 Merge the blood pressure data in '8D_KF.xlsx' with the Gaussian feature file. The integrated data is saved to '4_Gaussian_features_BP.xlsx', containing Gaussian features constrained by the 2% data range of knowledge features and blood pressure information.
 Each interval's corresponding folder follows the same modeling process.
 
+all 
 This study selected six predictive models to effectively predict blood pressure based on Gaussian features generated from 35 data interval constraints derived from knowledge characteristics.
 
 baseline
@@ -64,6 +64,6 @@ The Gaussian features (DKF) constrained by a 95% data interval based on knowledg
 Convert gender characteristics into binary code, with males encoded as 1 and females encoded as 0.
 3.DNN.py: 
 Refining blood pressure prediction using a DNN model with DKF that includes baseline features.
+
 PPGs+BIFs:
 Under the DNN framework, two types of blood pressure predictions are calculated for each sample: one based solely on DKF features, and the other combining DKF features with baseline features.
-
